@@ -1,0 +1,13 @@
+# Local-only artifacts — never commit research / credentials / browser profiles
+qa/
+research/
+data/
+src/
+delivery/
+chrome-*/
+*.zip
+*.env
+api.env
+.env
+.DS_Store
+Thumbs.db

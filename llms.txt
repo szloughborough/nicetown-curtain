@@ -1,0 +1,26 @@
+# NICETOWN
+
+> A product showcase for NICETOWN curtains on Amazon.com (United States). 95 curtain styles across 12 collections, with verified sizes, panel counts, ratings and reference prices.
+
+- Home: https://nicetown-curtain.com/
+- Full catalog: https://nicetown-curtain.com/products/
+- Black Friday & Cyber Monday 2026 deals: https://nicetown-curtain.com/black-friday-deals/ (33 currently verified price reductions, snapshot November 15, 2026; not confirmed event promotions)
+- Blackout Curtains: https://nicetown-curtain.com/blackout-curtains/ (41 styles)
+- Curtain Hardware & Accessories: https://nicetown-curtain.com/curtain-hardware/ (11 styles)
+- French Door Curtains: https://nicetown-curtain.com/french-door-curtains/ (21 styles)
+- Light Filtering Curtains: https://nicetown-curtain.com/light-filtering-curtains/ (21 styles)
+- Linen Curtains: https://nicetown-curtain.com/linen-curtains/ (38 styles)
+- Outdoor Curtains: https://nicetown-curtain.com/outdoor-curtains/ (7 styles)
+- Printed Curtains: https://nicetown-curtain.com/printed-curtains/ (15 styles)
+- Room Darkening Curtains: https://nicetown-curtain.com/room-darkening-curtains/ (12 styles)
+- Sheer Curtains: https://nicetown-curtain.com/sheer-curtains/ (19 styles)
+- Soundproof Curtains: https://nicetown-curtain.com/soundproof-curtains/ (4 styles)
+- Thermal Curtains: https://nicetown-curtain.com/thermal-curtains/ (31 styles)
+- Velvet Curtains: https://nicetown-curtain.com/velvet-curtains/ (6 styles)
+- About: https://nicetown-curtain.com/about/
+- Contact: https://nicetown-curtain.com/contact/ (contact@nicetown-curtain.com)
+- Privacy: https://nicetown-curtain.com/privacy/
+- Terms: https://nicetown-curtain.com/terms/
+
+Purchases are completed on Amazon.com. Prices are a snapshot from November 15, 2026 and can change.
+Product CTAs target one exact ASIN; the "Shop the NICETOWN Store on Amazon" link opens the official brand storefront. Outbound clicks are attributed by page template in GA4 (`affiliate_click`).
