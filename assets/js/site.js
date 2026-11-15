@@ -177,9 +177,10 @@
   }
 
   if (phase !== "pre" && promo) {
+    var arrow = '<span class="arr" aria-hidden="true"></span>';
     promo.innerHTML = phase === "during"
-      ? 'Black Friday &amp; Cyber Monday week is here &mdash; check Amazon for live prices. <a href="/black-friday-deals/">See all deals &#8594;</a>'
-      : 'See current NICETOWN price reductions on Amazon. <a href="/black-friday-deals/">See all deals &#8594;</a>';
+      ? 'Black Friday &amp; Cyber Monday week is here &mdash; check Amazon for live prices. <a href="/black-friday-deals/">See all deals ' + arrow + '</a>'
+      : 'See current NICETOWN price reductions on Amazon. <a href="/black-friday-deals/">See all deals ' + arrow + '</a>';
   }
 
   if (phase === "post") {
