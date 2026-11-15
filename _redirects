@@ -1,0 +1,2 @@
+# Canonical host: www -> apex (301)
+https://www.nicetown-curtain.com/* https://nicetown-curtain.com/:splat 301!

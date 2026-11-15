@@ -148,22 +148,58 @@
     });
   }
 
-  /* ---- event status: factual only, never claims an event price ---- */
+  /* ---- seasonal phase -------------------------------------------------
+     The published HTML is a pre-event snapshot (November 15, 2026). Once the
+     event starts or ends, replace time-bound claims instead of leaving a
+     "33 deals / up to 55% off" banner on the site indefinitely. Never claim
+     an event price: Amazon is the only source of truth for pricing. */
+  var now = new Date();
+  var bf = new Date(2026, 10, 27);
+  var cmEnd = new Date(2026, 10, 30, 23, 59, 59);
+  var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+  var phase = today < bf ? "pre" : (now <= cmEnd ? "during" : "post");
+  document.documentElement.setAttribute("data-event-phase", phase);
+
+  var promo = document.getElementById("promo-bar");
+  if (promo) promo.setAttribute("data-event-phase", phase);
+
   var status = document.getElementById("bf-status");
   if (status) {
-    var now = new Date();
-    var bf = new Date(2026, 10, 27);
-    var cmEnd = new Date(2026, 10, 30, 23, 59, 59);
-    var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    if (today < bf) {
+    if (phase === "pre") {
       var days = Math.round((bf - today) / 86400000);
       status.textContent = "Black Friday is in " + days + " "
         + (days === 1 ? "day" : "days") + " (November 27, 2026). The savings below are current price reductions, not confirmed event prices.";
-    } else if (now <= cmEnd) {
+    } else if (phase === "during") {
       status.textContent = "Black Friday and Cyber Monday week is here. Check Amazon for the live price on every product.";
     } else {
       status.textContent = "The 2026 Black Friday and Cyber Monday event has ended. Prices below are a historical snapshot — check Amazon for current pricing.";
     }
+  }
+
+  if (phase !== "pre" && promo) {
+    promo.innerHTML = phase === "during"
+      ? 'Black Friday &amp; Cyber Monday week is here &mdash; check Amazon for live prices. <a href="/black-friday-deals/">See all deals &#8594;</a>'
+      : 'See current NICETOWN price reductions on Amazon. <a href="/black-friday-deals/">See all deals &#8594;</a>';
+  }
+
+  if (phase === "post") {
+    var meta = document.getElementById("deals-meta");
+    if (meta) meta.textContent = "Price snapshot November 15, 2026 — check Amazon for current pricing.";
+    var band = document.getElementById("bf-band");
+    if (band) {
+      var eyebrow = band.querySelector(".bf-eyebrow");
+      if (eyebrow) eyebrow.textContent = "2026 price snapshot";
+      var bandH2 = band.querySelector("h2");
+      if (bandH2) bandH2.textContent = "NICETOWN curtain savings we tracked";
+      var lead = band.querySelector(".bf-lead");
+      if (lead) lead.textContent = "These price reductions were confirmed on November 15, 2026. The 2026 event has ended, so always check the current price on Amazon before buying.";
+      var stats = band.querySelector(".bf-stats");
+      if (stats && stats.parentNode) stats.parentNode.removeChild(stats);
+      var dates = band.querySelector(".bf-dates");
+      if (dates && dates.parentNode) dates.parentNode.removeChild(dates);
+    }
+    var dealCta = document.querySelector("[data-nt-deal-cta]");
+    if (dealCta) dealCta.textContent = "See current price reductions";
   }
 
   /* ---- affiliate click attribution ----
