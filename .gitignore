@@ -5,6 +5,7 @@ data/
 src/
 delivery/
 chrome-*/
+.wrangler/
 *.zip
 *.env
 api.env
