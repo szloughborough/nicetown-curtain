@@ -1,2 +1,4 @@
-# Canonical host: www -> apex (301)
-https://www.nicetown-curtain.com/* https://nicetown-curtain.com/:splat 301!
+# Cloudflare Pages: path-level sources only; domain-level redirects are
+# unsupported by _redirects. Host 301s are Cloudflare Redirect Rules /
+# Bulk Redirects (see delivery/DEPLOY-NOTES.md sections 2 and 4).
+/index.html / 301
